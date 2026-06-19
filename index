@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Taohy</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 800px;
+      margin: 60px auto;
+      line-height: 1.6;
+      padding: 0 20px;
+    }
+
+    h1 {
+      font-size: 42px;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      margin-top: 36px;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 6px;
+    }
+
+    a {
+      color: #3366cc;
+      text-decoration: none;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Taohy</h1>
+
+  <p>
+    Welcome to my personal academic homepage.
+  </p>
+
+  <h2>About Me</h2>
+  <p>
+    I am interested in computational neuroscience, mathematical modeling,
+    dynamical systems, and machine learning.
+  </p>
+
+  <h2>Research Interests</h2>
+  <ul>
+    <li>Working memory</li>
+    <li>Neural population dynamics</li>
+    <li>Mixed selectivity</li>
+    <li>Recurrent neural networks</li>
+  </ul>
+
+  <h2>Projects</h2>
+  <ul>
+    <li>RNN modeling of working memory</li>
+    <li>Geometry of neural representations</li>
+    <li>Mixed selectivity and high-dimensional coding</li>
+  </ul>
+
+  <h2>Contact</h2>
+  <p>
+    GitHub: <a href="https://github.com/yoshikazu2024">yoshikazu2024</a>
+  </p>
+</body>
+</html>
