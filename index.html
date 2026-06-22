@@ -7,429 +7,260 @@
 
 <style>
 :root {
-  --text: #111111;
-  --muted: #565656;
-  --quiet: #8a8a8a;
-  --line: #e8e8e8;
-  --soft: #f6f6f6;
-  --page-width: 820px;
-  --page-pad-y-min: 48px;
-  --page-pad-y-max: 84px;
-  --page-pad-x-min: 22px;
-  --page-pad-x-max: 56px;
-  --body-size: 18px;
-  --body-line-height: 1.62;
-  --header-gap-min: 24px;
-  --header-gap-max: 44px;
-  --header-margin-bottom: 60px;
-  --header-padding-bottom: 40px;
-  --avatar-size: 108px;
-  --title-min: 2.5rem;
-  --title-max: 4.25rem;
-  --subtitle-size: 1.08rem;
-  --subtitle-measure: 48ch;
-  --section-gap: 52px;
-  --section-title-size: 0.78rem;
-  --section-title-tracking: 0.14em;
-  --item-title-size: 1.14rem;
-  --date-gap: 18px;
-  --content-measure: 66ch;
+--text: #111111;
+--muted: #565656;
+--quiet: #8a8a8a;
+--line: #e8e8e8;
+--soft: #f6f6f6;
+--page-width: 820px;
+--page-pad-y-min: 48px;
+--page-pad-y-max: 84px;
+--page-pad-x-min: 22px;
+--page-pad-x-max: 56px;
+--body-size: 18px;
+--body-line-height: 1.62;
+--header-gap-min: 24px;
+--header-gap-max: 44px;
+--header-margin-bottom: 60px;
+--header-padding-bottom: 40px;
+--avatar-size: 108px;
+--title-min: 2.5rem;
+--title-max: 4.25rem;
+--subtitle-size: 1.08rem;
+--subtitle-measure: 48ch;
+--section-gap: 52px;
+--section-title-size: 0.78rem;
+--section-title-tracking: 0.14em;
+--item-title-size: 1.14rem;
+--date-gap: 18px;
+--content-measure: 66ch;
 }
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { -webkit-text-size-adjust: 100%; }
 body {
-  font-family: 'Times New Roman', Times, serif;
-  background: #ffffff;
-  color: var(--text);
-  padding: clamp(var(--page-pad-y-min), 7vw, var(--page-pad-y-max)) clamp(var(--page-pad-x-min), 5vw, var(--page-pad-x-max));
-  max-width: var(--page-width);
-  margin: 0 auto;
-  line-height: var(--body-line-height);
-  font-size: var(--body-size);
-  overflow-wrap: break-word;
-  text-wrap: pretty;
+font-family: 'Times New Roman', Times, serif;
+background: #ffffff;
+color: var(--text);
+padding: clamp(var(--page-pad-y-min), 7vw, var(--page-pad-y-max)) clamp(var(--page-pad-x-min), 5vw, var(--page-pad-x-max));
+max-width: var(--page-width);
+margin: 0 auto;
+line-height: var(--body-line-height);
+font-size: var(--body-size);
+overflow-wrap: break-word;
+text-wrap: pretty;
 }
 .header {
-  display: flex;
-  align-items: flex-end;
-  gap: clamp(var(--header-gap-min), 5vw, var(--header-gap-max));
-  margin-bottom: var(--header-margin-bottom);
-  padding-bottom: var(--header-padding-bottom);
-  border-bottom: 1px solid var(--line);
+display: flex;
+align-items: flex-end;
+gap: clamp(var(--header-gap-min), 5vw, var(--header-gap-max));
+margin-bottom: var(--header-margin-bottom);
+padding-bottom: var(--header-padding-bottom);
+border-bottom: 1px solid var(--line);
 }
 .avatar {
-  width: var(--avatar-size);
-  height: var(--avatar-size);
-  border-radius: 50%;
-  object-fit: cover;
-  object-position: center top;
-  flex-shrink: 0;
+width: var(--avatar-size);
+height: var(--avatar-size);
+border-radius: 50%;
+object-fit: cover;
+object-position: center top;
+flex-shrink: 0;
 }
 .header-text h1 {
-  font-size: clamp(var(--title-min), 7vw, var(--title-max));
-  line-height: 1;
-  font-weight: 700;
-  margin-bottom: 14px;
-  text-wrap: balance;
+font-size: clamp(var(--title-min), 7vw, var(--title-max));
+line-height: 1;
+font-weight: 700;
+margin-bottom: 14px;
+text-wrap: balance;
 }
 .header-text p {
-  max-width: var(--subtitle-measure);
-  font-size: var(--subtitle-size);
-  line-height: 1.45;
-  color: var(--muted);
+max-width: var(--subtitle-measure);
+font-size: var(--subtitle-size);
+line-height: 1.45;
+color: var(--muted);
 }
 section {
-  margin-bottom: var(--section-gap);
+margin-bottom: var(--section-gap);
 }
 h2 {
-  font-size: var(--section-title-size);
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: var(--section-title-tracking);
-  color: var(--quiet);
-  margin-bottom: 18px;
+font-size: var(--section-title-size);
+font-weight: 700;
+text-transform: uppercase;
+letter-spacing: var(--section-title-tracking);
+color: var(--quiet);
+margin-bottom: 18px;
 }
-/* Education */
-.edu-item {
-  margin-bottom: 12px;
-}
-.edu-item .school {
-  font-size: 1.22rem;
-  line-height: 1.25;
-  font-weight: 700;
-  margin-bottom: 5px;
-}
-.edu-item .degree {
-  max-width: calc(var(--content-measure) - 6ch);
-  font-size: 1rem;
-  line-height: 1.5;
-  color: #333333;
-}
-.edu-item .note {
-  max-width: calc(var(--content-measure) - 2ch);
-  font-size: 0.92rem;
-  line-height: 1.5;
-  color: var(--quiet);
-  margin-top: 8px;
-}
-.edu-item .year {
-  font-size: 0.92rem;
-  color: var(--quiet);
-  margin-top: 2px;
-}
-/* Honors */
-.honor-list {
-  list-style: none;
-  padding: 0;
-}
-.honor-list li {
-  font-size: 1rem;
-  line-height: 1.45;
-  padding: 10px 0;
-  border-bottom: 1px solid var(--soft);
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  align-items: baseline;
-  gap: var(--date-gap);
-}
+.edu-item { margin-bottom: 12px; }
+.edu-item .school { font-size: 1.22rem; line-height: 1.25; font-weight: 700; margin-bottom: 5px; }
+.edu-item .degree { max-width: calc(var(--content-measure) - 6ch); font-size: 1rem; line-height: 1.5; color: #333333; }
+.edu-item .note { max-width: calc(var(--content-measure) - 2ch); font-size: 0.92rem; line-height: 1.5; color: var(--quiet); margin-top: 8px; }
+.edu-item .year { font-size: 0.92rem; color: var(--quiet); margin-top: 2px; }
+.honor-list { list-style: none; padding: 0; }
+.honor-list li { font-size: 1rem; line-height: 1.45; padding: 10px 0; border-bottom: 1px solid var(--soft); display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: baseline; gap: var(--date-gap); }
 .honor-list li:last-child { border-bottom: none; }
-.honor-year {
-  font-size: 0.9rem;
-  color: var(--quiet);
-  white-space: nowrap;
-}
-/* Program */
-.prog-item {
-  padding: 18px 0;
-  border-bottom: 1px solid var(--soft);
-}
-.prog-item:last-child { border-bottom: none; }
-.prog-header {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  align-items: start;
-  gap: var(--date-gap);
-  margin-bottom: 8px;
-}
-.prog-title {
-  max-width: calc(var(--content-measure) - 4ch);
-  font-size: var(--item-title-size);
-  line-height: 1.34;
-  font-weight: 700;
-  text-wrap: pretty;
-}
-.prog-date {
-  padding-top: 0.15rem;
-  font-size: 0.9rem;
-  color: var(--quiet);
-  white-space: nowrap;
-}
-.prog-detail {
-  max-width: var(--content-measure);
-  font-size: 0.98rem;
-  line-height: 1.55;
-  color: var(--muted);
-  margin-top: 4px;
-}
-.prog-detail + .prog-detail {
-  margin-top: 5px;
-}
-/* Publication */
-.pub-text {
-  font-size: 1rem;
-  color: var(--muted);
-  font-style: italic;
-}
-/* Personal Interest */
-.tag-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-.tag {
-  background: var(--soft);
-  color: #333333;
-  padding: 7px 14px;
-  border-radius: 4px;
-  font-size: 0.95rem;
-  line-height: 1.2;
-}
-a.contact-link {
-  font-size: 1rem;
-  color: var(--text);
-  text-decoration: none;
-  border-bottom: 1px solid var(--text);
-}
+.honor-year { font-size: 0.9rem; color: var(--quiet); white-space: nowrap; }
+.pub-text { font-size: 1rem; color: var(--muted); font-style: italic; }
+.tag-list { display: flex; flex-wrap: wrap; gap: 10px; }
+.tag { background: var(--soft); color: #333333; padding: 7px 14px; border-radius: 4px; font-size: 0.95rem; line-height: 1.2; }
+a.contact-link { font-size: 1rem; color: var(--text); text-decoration: none; border-bottom: 1px solid var(--text); }
 a.contact-link:hover { color: var(--muted); border-color: var(--muted); }
 
+/* Education layout: text left, logo right */
 .edu-school-row {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 28px;
+display: flex;
+align-items: flex-start;
+justify-content: space-between;
+gap: 28px;
+}
+.edu-text-col {
+flex: 1;
+min-width: 0;
 }
 .teep-logo {
-  width: 76px;
-  height: 76px;
-  object-fit: contain;
-  flex-shrink: 0;
-  margin-top: 2px;
+width: 99px;
+height: 99px;
+object-fit: contain;
+flex-shrink: 0;
+margin-top: 2px;
 }
 .teep-desc {
-  max-width: var(--content-measure);
-  margin-top: 18px;
-  font-size: 0.96rem;
-  color: var(--muted);
-  line-height: 1.68;
-  border-left: 2px solid var(--line);
-  padding-left: 16px;
+max-width: var(--content-measure);
+margin-top: 18px;
+font-size: 0.96rem;
+color: var(--muted);
+line-height: 1.68;
+border-left: 2px solid var(--line);
+padding-left: 16px;
 }
+
+/* Academic Experience */
+.exp-card { display: flex; align-items: flex-start; gap: 20px; padding: 18px 0; border-bottom: 1px solid #f0f0f0; }
+.exp-card:last-child { border-bottom: none; }
+.exp-logo { width: 90px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; padding-top: 3px; }
+.exp-logo img { width: 100%; height: auto; object-fit: contain; }
+.exp-body { flex: 1; }
+.exp-title { font-size: 1.05rem; font-weight: bold; margin-bottom: 2px; }
+.exp-meta { font-size: 0.88rem; color: #666666; margin-bottom: 6px; }
+.exp-keywords { display: flex; flex-wrap: wrap; gap: 6px; }
+.exp-kw { background: #f5f5f5; color: #333333; padding: 3px 10px; border-radius: 3px; font-size: 0.82rem; }
+
 @media (max-width: 640px) {
-  body {
-    font-size: 17px;
-    padding-top: 40px;
-  }
-  .header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 22px;
-    margin-bottom: 48px;
-    padding-bottom: 32px;
-  }
-  .avatar { width: 88px; height: 88px; }
-  .prog-header,
-  .honor-list li {
-    grid-template-columns: 1fr;
-    gap: 4px;
-  }
-  .edu-school-row {
-    display: grid;
-    grid-template-columns: 1fr auto;
-    gap: 18px;
-  }
-  .teep-logo {
-    width: 58px;
-    height: 58px;
-  }
+body { font-size: 17px; padding-top: 40px; }
+.header { flex-direction: column; align-items: flex-start; gap: 22px; margin-bottom: 48px; padding-bottom: 32px; }
+.avatar { width: 88px; height: 88px; }
+.honor-list li { grid-template-columns: 1fr; gap: 4px; }
+.edu-school-row { gap: 16px; }
+.teep-logo { width: 75px; height: 75px; }
 }
 @media (max-width: 420px) {
-  .edu-school-row {
-    grid-template-columns: 1fr;
-  }
-  .teep-logo {
-    order: -1;
-  }
+.edu-school-row { flex-direction: column; }
+.teep-logo { order: -1; }
 }
-
-.exp-card {
-  display: flex;
-  align-items: flex-start;
-  gap: 20px;
-  padding: 18px 0;
-  border-bottom: 1px solid #f0f0f0;
-}
-.exp-card:last-child { border-bottom: none; }
-.exp-logo {
-  width: 90px;
-  flex-shrink: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding-top: 3px;
-}
-.exp-logo img {
-  width: 100%;
-  height: auto;
-  object-fit: contain;
-}
-.exp-body { flex: 1; }
-.exp-title {
-  font-size: 1.05rem;
-  font-weight: bold;
-  margin-bottom: 2px;
-}
-.exp-meta {
-  font-size: 0.88rem;
-  color: #666666;
-  margin-bottom: 6px;
-}
-.exp-keywords {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-}
-.exp-kw {
-  background: #f5f5f5;
-  color: #333333;
-  padding: 3px 10px;
-  border-radius: 3px;
-  font-size: 0.82rem;
-}
-
 </style>
 </head>
 <body>
 
 <div class="header">
-  <img class="avatar" src="photo.jpg" alt="Hongyu Tao">
-  <div class="header-text">
-    <h1>Hongyu Tao</h1>
-    <p>Computational neuroscience &middot; Dynamical systems &middot; Mathematical modeling</p>
-  </div>
+<img class="avatar" src="photo.jpg" alt="Hongyu Tao">
+<div class="header-text">
+<h1>Hongyu Tao</h1>
+<p>Computational neuroscience &middot; Dynamical systems &middot; Mathematical modeling</p>
+</div>
 </div>
 
 <!-- Education -->
 <section>
-  <h2>Education</h2>
-  <div class="edu-item">
-    <div class="edu-school-row">
-      <div>
-        <div class="school">Tsinghua University</div>
-        <div class="degree">B.S. in Theoretical and Applied Mechanics &mdash; Tsien Excellence in Engineering Program (TEEP)</div>
-        <div class="year">2024 &ndash; present</div>
-        <div class="note"><em>This is NOT mechanical engineering &mdash; This Major focuses on the intersection of Math and Physics.</em></div>
-      </div>
-      <img class="teep-logo" src="teep-logo.png" alt="TEEP Logo">
-    </div>
-    <div class="teep-desc">
-      The Tsien Excellence in Engineering Program (TEEP, 钱学森力学班) is a highly selective program at Tsinghua University.<br>
-      Here, students receive intensive academic training to cultivate their mathematical and physical intuition, <br>
-      They are encouraged to apply this intuition to conduct rigorous, multidisciplinary research.
-    </div>
-  </div>
+<h2>Education</h2>
+<div class="edu-item">
+<div class="edu-school-row">
+<div class="edu-text-col">
+<div class="school">Tsinghua University</div>
+<div class="degree">B.S. in Theoretical and Applied Mechanics &mdash; Tsien Excellence in Engineering Program (TEEP)</div>
+<div class="year">2024 &ndash; present</div>
+<div class="note"><em>This is NOT mechanical engineering &mdash; This Major focuses on the intersection of Math and Physics.</em></div>
+<div class="teep-desc">
+The Tsien Excellence in Engineering Program (TEEP, 钱学森力学班) is a highly selective program at Tsinghua University.<br>
+Here, students receive intensive academic training to cultivate their mathematical and physical intuition.<br>
+They are encouraged to apply this intuition to conduct rigorous, multidisciplinary research.
+</div>
+</div>
+<img class="teep-logo" src="teep-logo.png" alt="TEEP Logo">
+</div>
+</div>
 </section>
 
 <!-- Academic Experience -->
 <section>
-  <h2>Academic Experience</h2>
-
-  <div class="exp-card">
-    <div class="exp-logo">
-      <img src="logo-mcgovern.png" alt="McGovern Institute">
-    </div>
-    <div class="exp-body">
-      <div class="exp-title">McGovern Institute for Brain Research, Tsinghua University</div>
-      <div class="exp-meta">Dec 2024 &ndash; present &nbsp;&bull;&nbsp; Advisors: Zengcai Guo (2024&ndash;2026), Xinyu Zhao (2026&ndash;present)</div>
-      <div class="exp-keywords">
-        <span class="exp-kw">Systems neuroscience</span>
-        <span class="exp-kw">Working memory</span>
-        <span class="exp-kw">In silico network modeling</span>
-        <span class="exp-kw">RNN</span>
-      </div>
-    </div>
-  </div>
-
-  <div class="exp-card">
-    <div class="exp-logo">
-      <img src="logo-cmu.png" alt="Carnegie Mellon University">
-    </div>
-    <div class="exp-body">
-      <div class="exp-title">Active Perception Laboratory, Carnegie Mellon University</div>
-      <div class="exp-meta">Feb 2026 &ndash; present &nbsp;&bull;&nbsp; Advisor: Tai-Sing Lee</div>
-      <div class="exp-keywords">
-        <span class="exp-kw">Mixed selectivity</span>
-        <span class="exp-kw">Neural manifolds</span>
-        <span class="exp-kw">Representational geometry</span>
-      </div>
-    </div>
-  </div>
-
-  <div class="exp-card">
-    <div class="exp-logo">
-      <img src="logo-cas.png" alt="Chinese Academy of Sciences">
-    </div>
-    <div class="exp-body">
-      <div class="exp-title">Guoqi Li Lab, Institute of Automation, Chinese Academy of Sciences</div>
-      <div class="exp-meta">Feb 2026 &ndash; present</div>
-      <div class="exp-keywords">
-        <span class="exp-kw">Drosophila connectome</span>
-        <span class="exp-kw">Whole-brain network</span>
-        <span class="exp-kw">Neural control</span>
-        <span class="exp-kw">Brain-inspired computing</span>
-      </div>
-    </div>
-  </div>
+<h2>Academic Experience</h2>
+<div class="exp-card">
+<div class="exp-logo"><img src="logo-mcgovern.png" alt="McGovern Institute"></div>
+<div class="exp-body">
+<div class="exp-title">McGovern Institute for Brain Research, Tsinghua University</div>
+<div class="exp-meta">Dec 2024 &ndash; present &nbsp;&bull;&nbsp; Advisors: Zengcai Guo (2024&ndash;2026), Xinyu Zhao (2026&ndash;present)</div>
+<div class="exp-keywords">
+<span class="exp-kw">Systems neuroscience</span>
+<span class="exp-kw">Working memory</span>
+<span class="exp-kw">In silico network modeling</span>
+<span class="exp-kw">RNN</span>
+</div>
+</div>
+</div>
+<div class="exp-card">
+<div class="exp-logo"><img src="logo-cmu.png" alt="Carnegie Mellon University"></div>
+<div class="exp-body">
+<div class="exp-title">Active Perception Laboratory, Carnegie Mellon University</div>
+<div class="exp-meta">Feb 2026 &ndash; present &nbsp;&bull;&nbsp; Advisor: Tai-Sing Lee</div>
+<div class="exp-keywords">
+<span class="exp-kw">Mixed selectivity</span>
+<span class="exp-kw">Neural manifolds</span>
+<span class="exp-kw">Representational geometry</span>
+</div>
+</div>
+</div>
+<div class="exp-card">
+<div class="exp-logo"><img src="logo-cas.png" alt="Chinese Academy of Sciences"></div>
+<div class="exp-body">
+<div class="exp-title">Guoqi Li Lab, Institute of Automation, Chinese Academy of Sciences</div>
+<div class="exp-meta">Feb 2026 &ndash; present</div>
+<div class="exp-keywords">
+<span class="exp-kw">Drosophila connectome</span>
+<span class="exp-kw">Whole-brain network</span>
+<span class="exp-kw">Neural control</span>
+<span class="exp-kw">Brain-inspired computing</span>
+</div>
+</div>
+</div>
 </section>
 
 <!-- Selected Honors -->
 <section>
-  <h2>Selected Honors</h2>
-  <ul class="honor-list">
-    <li>
-      <span>First-Class Comprehensive Scholarship of Tsinghua University</span>
-      <span class="honor-year">2025</span>
-    </li>
-    <li>
-      <span>Xuetang Scholarship &mdash; Tsinghua Xuetang Talents Program</span>
-      <span class="honor-year">2024, 2025</span>
-    </li>
-    <li>
-      <span>Friend of Tsinghua &mdash; Jeme Tien-yow Scholarship</span>
-      <span class="honor-year">2025</span>
-    </li>
-  </ul>
+<h2>Selected Honors</h2>
+<ul class="honor-list">
+<li><span>First-Class Comprehensive Scholarship of Tsinghua University</span><span class="honor-year">2025</span></li>
+<li><span>Xuetang Scholarship &mdash; Tsinghua Xuetang Talents Program</span><span class="honor-year">2024, 2025</span></li>
+<li><span>Friend of Tsinghua &mdash; Jeme Tien-yow Scholarship</span><span class="honor-year">2025</span></li>
+</ul>
 </section>
 
 <!-- Publication -->
 <section>
-  <h2>Publication</h2>
-  <p class="pub-text">One day. Maybe not today, maybe not tomorrow, but one day.</p>
+<h2>Publication</h2>
+<p class="pub-text">One day. Maybe not today, maybe not tomorrow, but one day.</p>
 </section>
 
 <!-- Personal Interests -->
 <section>
-  <h2>Personal Interests</h2>
-  <div class="tag-list">
-    <span class="tag">American Football</span>
-    <span class="tag">Reading</span>
-    <span class="tag">Music</span>
-  </div>
+<h2>Personal Interests</h2>
+<div class="tag-list">
+<span class="tag">American Football</span>
+<span class="tag">Reading</span>
+<span class="tag">Music</span>
+</div>
 </section>
 
 <!-- Contact -->
 <section>
-  <h2>Contact</h2>
-  <a class="contact-link" href="https://github.com/yoshikazu2024" target="_blank">GitHub &mdash; yoshikazu2024</a>
+<h2>Contact</h2>
+<a class="contact-link" href="https://github.com/yoshikazu2024" target="_blank">GitHub &mdash; yoshikazu2024</a>
 </section>
 
 </body>
