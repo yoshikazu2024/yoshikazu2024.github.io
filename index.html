@@ -274,14 +274,14 @@ They are encouraged to apply this intuition to conduct rigorous, multidisciplina
 </section>
 
 <!-- Coursework toggle -->
-<button class="coursework-toggle" id="cwToggle" onclick="toggleCoursework()" aria-expanded="false">
+<button class="coursework-toggle" id="cwToggle" aria-expanded="false">
   <span class="cw-arrow">&#9654;</span> Coursework
 </button>
 
 <!-- Coursework panel -->
 <div class="coursework-panel" id="cwPanel">
   <div class="carousel-wrap" id="cwCarousel">
-    <button class="carousel-btn prev" onclick="scrollCarousel(-1)" aria-label="Previous">&#8592;</button>
+    <button class="carousel-btn prev" id="cwPrev" aria-label="Previous">&#8592;</button>
     <div class="carousel-track-outer" id="cwTrack">
       <div class="carousel-track">
 
@@ -296,7 +296,7 @@ They are encouraged to apply this intuition to conduct rigorous, multidisciplina
 
       </div>
     </div>
-    <button class="carousel-btn next" onclick="scrollCarousel(1)" aria-label="Next">&#8594;</button>
+    <button class="carousel-btn next" id="cwNext" aria-label="Next">&#8594;</button>
   </div>
 </div>
 
@@ -378,17 +378,30 @@ They are encouraged to apply this intuition to conduct rigorous, multidisciplina
 
 
 <script>
-function toggleCoursework() {
+document.addEventListener('DOMContentLoaded', function() {
   var btn = document.getElementById('cwToggle');
   var panel = document.getElementById('cwPanel');
-  var isOpen = panel.classList.toggle('open');
-  btn.classList.toggle('open', isOpen);
-  btn.setAttribute('aria-expanded', isOpen);
-}
-function scrollCarousel(dir) {
+  if (btn && panel) {
+    btn.addEventListener('click', function() {
+      var isOpen = panel.classList.toggle('open');
+      btn.classList.toggle('open', isOpen);
+      btn.setAttribute('aria-expanded', isOpen);
+    });
+  }
+  var prevBtn = document.getElementById('cwPrev');
+  var nextBtn = document.getElementById('cwNext');
   var track = document.getElementById('cwTrack');
-  track.scrollBy({ left: dir * 280, behavior: 'smooth' });
-}
+  if (prevBtn && track) {
+    prevBtn.addEventListener('click', function() {
+      track.scrollBy({ left: -280, behavior: 'smooth' });
+    });
+  }
+  if (nextBtn && track) {
+    nextBtn.addEventListener('click', function() {
+      track.scrollBy({ left: 280, behavior: 'smooth' });
+    });
+  }
+});
 </script>
 
 </body>
