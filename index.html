@@ -44,7 +44,7 @@ body {
   color: #555555;
 }
 section {
-  margin-bottom: 40px;
+  margin-bottom: 44px;
 }
 h2 {
   font-size: 0.85rem;
@@ -52,8 +52,83 @@ h2 {
   text-transform: uppercase;
   letter-spacing: 0.1em;
   color: #888888;
-  margin-bottom: 14px;
+  margin-bottom: 16px;
 }
+/* Education */
+.edu-item {
+  margin-bottom: 10px;
+}
+.edu-item .school {
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+.edu-item .degree {
+  font-size: 0.95rem;
+  color: #444444;
+}
+.edu-item .year {
+  font-size: 0.88rem;
+  color: #888888;
+}
+/* Honors */
+.honor-list {
+  list-style: none;
+  padding: 0;
+}
+.honor-list li {
+  font-size: 0.95rem;
+  padding: 6px 0;
+  border-bottom: 1px solid #f0f0f0;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+}
+.honor-list li:last-child { border-bottom: none; }
+.honor-year {
+  font-size: 0.85rem;
+  color: #888888;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+/* Program */
+.prog-item {
+  padding: 14px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+.prog-item:last-child { border-bottom: none; }
+.prog-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 4px;
+}
+.prog-title {
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+.prog-date {
+  font-size: 0.85rem;
+  color: #888888;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.prog-detail {
+  font-size: 0.95rem;
+  color: #555555;
+  margin-top: 2px;
+}
+.prog-detail + .prog-detail {
+  margin-top: 3px;
+}
+/* Publication */
+.pub-text {
+  font-size: 1rem;
+  color: #555555;
+  font-style: italic;
+}
+/* Personal Interest */
 .tag-list {
   display: flex;
   flex-wrap: wrap;
@@ -66,20 +141,6 @@ h2 {
   border-radius: 4px;
   font-size: 0.95rem;
 }
-.project-item {
-  padding: 14px 0;
-  border-bottom: 1px solid #f0f0f0;
-}
-.project-item:last-child { border-bottom: none; }
-.project-item h3 {
-  font-size: 1.05rem;
-  font-weight: 600;
-  margin-bottom: 4px;
-}
-.project-item p {
-  font-size: 0.95rem;
-  color: #666666;
-}
 a.contact-link {
   font-size: 1rem;
   color: #111111;
@@ -90,10 +151,13 @@ a.contact-link:hover { color: #555555; border-color: #555555; }
 @media (max-width: 520px) {
   .header { flex-direction: column; align-items: flex-start; }
   .avatar { width: 80px; height: 80px; }
+  .prog-header { flex-direction: column; gap: 2px; }
+  .honor-list li { flex-direction: column; gap: 2px; }
 }
 </style>
 </head>
 <body>
+
 <div class="header">
   <img class="avatar" src="photo.jpg" alt="Hongyu Tao">
   <div class="header-text">
@@ -102,31 +166,84 @@ a.contact-link:hover { color: #555555; border-color: #555555; }
   </div>
 </div>
 
+<!-- Education -->
 <section>
-  <h2>Research Interests</h2>
+  <h2>Education</h2>
+  <div class="edu-item">
+    <div class="school">Tsinghua University</div>
+    <div class="degree">B.S. in Engineering Mechanics &mdash; Tsien Excellence in Engineering Program (TEEP)</div>
+    <div class="year">2023 &ndash; present</div>
+  </div>
+
+  <br>
+  <h2 style="margin-top:4px;">Selected Honors</h2>
+  <ul class="honor-list">
+    <li>
+      <span>First-Class Comprehensive Scholarship of Tsinghua University</span>
+      <span class="honor-year">2025</span>
+    </li>
+    <li>
+      <span>Xuetang Scholarship &mdash; Tsinghua Xuetang Talents Program</span>
+      <span class="honor-year">2024, 2025</span>
+    </li>
+    <li>
+      <span>Friend of Tsinghua &mdash; Jeme Tien-yow Scholarship</span>
+      <span class="honor-year">2025</span>
+    </li>
+  </ul>
+</section>
+
+<!-- Program -->
+<section>
+  <h2>Program</h2>
+
+  <div class="prog-item">
+    <div class="prog-header">
+      <span class="prog-title">Research Assistant &mdash; McGovern Institute for Brain Research, Tsinghua University</span>
+      <span class="prog-date">Dec 2024 &ndash; present</span>
+    </div>
+    <div class="prog-detail">Dec 2024 &ndash; Jun 2026 &nbsp;&bull;&nbsp; Advisor: Zengcai Guo &mdash; Acquired foundational knowledge in systems neuroscience.</div>
+    <div class="prog-detail">Jun 2026 &ndash; present &nbsp;&bull;&nbsp; Advisor: Xinyu Zhao &mdash; Exploring in silico network models for understanding working memory.</div>
+  </div>
+
+  <div class="prog-item">
+    <div class="prog-header">
+      <span class="prog-title">Research Assistant &mdash; Tai-Sing Lee Lab, Carnegie Mellon University</span>
+      <span class="prog-date">Feb 2026 &ndash; present</span>
+    </div>
+    <div class="prog-detail">Investigating the role of mixed selectivity in manifold separation of neural representations.</div>
+  </div>
+
+  <div class="prog-item">
+    <div class="prog-header">
+      <span class="prog-title">Research Intern &mdash; Guoqi Li Lab, Institute of Automation, Chinese Academy of Sciences</span>
+      <span class="prog-date">Feb 2026 &ndash; present</span>
+    </div>
+    <div class="prog-detail">Studying whole-brain connectome-based control of Drosophila locomotion using the full-scale fly brain network.</div>
+  </div>
+</section>
+
+<!-- Publication -->
+<section>
+  <h2>Publication</h2>
+  <p class="pub-text">One day. Maybe not today, maybe not tomorrow, but one day.</p>
+</section>
+
+<!-- Personal Interest -->
+<section>
+  <h2>Personal Interest</h2>
   <div class="tag-list">
-    <span class="tag">Working memory</span>
-    <span class="tag">Mixed selectivity</span>
-    <span class="tag">Neural population dynamics</span>
-    <span class="tag">RNN modeling</span>
+    <span class="tag">American Football</span>
+    <span class="tag">Reading</span>
+    <span class="tag">Music</span>
   </div>
 </section>
 
-<section>
-  <h2>Projects</h2>
-  <div class="project-item">
-    <h3>RNN models for working memory</h3>
-    <p>Recurrent neural network approaches to understanding working memory circuits.</p>
-  </div>
-  <div class="project-item">
-    <h3>Mixed selectivity and manifold geometry</h3>
-    <p>Exploring the geometry of neural representations in high-dimensional state spaces.</p>
-  </div>
-</section>
-
+<!-- Contact -->
 <section>
   <h2>Contact</h2>
   <a class="contact-link" href="https://github.com/yoshikazu2024" target="_blank">GitHub &mdash; yoshikazu2024</a>
 </section>
+
 </body>
 </html>
