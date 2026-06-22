@@ -12,7 +12,7 @@
 --quiet: #8a8a8a;
 --line: #e8e8e8;
 --soft: #f6f6f6;
---page-width: 820px;
+--page-width: 920px;
 --page-pad-y-min: 48px;
 --page-pad-y-max: 84px;
 --page-pad-x-min: 22px;
@@ -92,6 +92,7 @@ margin-bottom: 18px;
 .edu-item { margin-bottom: 12px; }
 .edu-item .school { font-size: 1.22rem; line-height: 1.25; font-weight: 700; margin-bottom: 5px; }
 .edu-item .degree { font-size: 1rem; line-height: 1.5; color: #333333; }
+.degree-line { display: block; }
 .edu-item .note { font-size: 0.92rem; line-height: 1.5; color: var(--quiet); margin-top: 8px; }
 .edu-item .year { font-size: 0.92rem; color: var(--quiet); margin-top: 2px; }
 .honor-list { list-style: none; padding: 0; }
@@ -104,7 +105,7 @@ margin-bottom: 18px;
 a.contact-link { font-size: 1rem; color: var(--text); text-decoration: none; border-bottom: 1px solid var(--text); }
 a.contact-link:hover { color: var(--muted); border-color: var(--muted); }
 
-/* Education layout: logo LEFT, text RIGHT */
+/* Education layout: logo left, text right */
 .edu-school-row {
 display: flex;
 align-items: flex-start;
@@ -122,6 +123,7 @@ flex: 1;
 min-width: 0;
 }
 .teep-desc {
+max-width: 620px;
 margin-top: 14px;
 font-size: 0.96rem;
 color: var(--muted);
@@ -173,11 +175,14 @@ body { font-size: 17px; padding-top: 40px; }
 <img class="teep-logo" src="teep-logo.png" alt="TEEP Logo">
 <div class="edu-text-col">
 <div class="school">Tsinghua University</div>
-<div class="degree">B.S. in Theoretical and Applied Mechanics &mdash; Tsien Excellence in Engineering Program (TEEP)</div>
+<div class="degree">
+<span class="degree-line">B.S. in Theoretical and Applied Mechanics</span>
+<span class="degree-line">&mdash; Tsien Excellence in Engineering Program (TEEP)</span>
+</div>
 <div class="year">2024 &ndash; present</div>
 <div class="note"><em>This is NOT mechanical engineering &mdash; This Major focuses on the intersection of Math and Physics.</em></div>
 <div class="teep-desc">
-The Tsien Excellence in Engineering Program (TEEP, 钱学森力学班) is a highly selective program at Tsinghua University.<br>
+The Tsien Excellence in Engineering Program is a highly selective program at Tsinghua University.<br>
 Here, students receive intensive academic training to cultivate their mathematical and physical intuition.<br>
 They are encouraged to apply this intuition to conduct rigorous, multidisciplinary research.
 </div>
