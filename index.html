@@ -159,6 +159,28 @@ a.contact-link:hover { color: #555555; border-color: #555555; }
   .prog-header { flex-direction: column; gap: 2px; }
   .honor-list li { flex-direction: column; gap: 2px; }
 }
+
+.edu-school-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+}
+.teep-logo {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.teep-desc {
+  margin-top: 12px;
+  font-size: 0.92rem;
+  color: #555555;
+  line-height: 1.65;
+  border-left: 3px solid #e5e5e5;
+  padding-left: 14px;
+}
 </style>
 </head>
 <body>
@@ -175,31 +197,22 @@ a.contact-link:hover { color: #555555; border-color: #555555; }
 <section>
   <h2>Education</h2>
   <div class="edu-item">
-    <div class="school">Tsinghua University</div>
-    <div class="degree">B.S. in Theoretical and Applied Mechanics &mdash; Tsien Excellence in Engineering Program (TEEP)</div>
-    <div class="year">2023 &ndash; present</div>
-    <div class="note"><em>Not mechanical engineering &mdash; we study the intersection of mathematics and physics.</em></div>
+    <div class="edu-school-row">
+      <div>
+        <div class="school">Tsinghua University</div>
+        <div class="degree">B.S. in Theoretical and Applied Mechanics &mdash; Tsien Excellence in Engineering Program (TEEP)</div>
+        <div class="year">2024 &ndash; present</div>
+        <div class="note"><em>This is NOT mechanical engineering &mdash; This Major focuses on the intersection of Math and Physics.</em></div>
+      </div>
+      <img class="teep-logo" src="teep-logo.png" alt="TEEP Logo">
+    </div>
+    <div class="teep-desc">
+      The Tsien Excellence in Engineering Program (TEEP, 钱学森力学班) is an elite honors program at Tsinghua University, named after Qian Xuesen — a pioneer of aerospace and applied mechanics. The program selects top students and provides rigorous training in mathematics, physics, and engineering science, with emphasis on fundamental research and interdisciplinary thinking.
+    </div>
   </div>
-
-  <br>
-  <h2 style="margin-top:4px;">Selected Honors</h2>
-  <ul class="honor-list">
-    <li>
-      <span>First-Class Comprehensive Scholarship of Tsinghua University</span>
-      <span class="honor-year">2025</span>
-    </li>
-    <li>
-      <span>Xuetang Scholarship &mdash; Tsinghua Xuetang Talents Program</span>
-      <span class="honor-year">2024, 2025</span>
-    </li>
-    <li>
-      <span>Friend of Tsinghua &mdash; Jeme Tien-yow Scholarship</span>
-      <span class="honor-year">2025</span>
-    </li>
-  </ul>
 </section>
 
-<!-- Program -->
+<!-- Programs -->
 <section>
   <h2>Program</h2>
 
@@ -229,15 +242,34 @@ a.contact-link:hover { color: #555555; border-color: #555555; }
   </div>
 </section>
 
+<!-- Selected Honors -->
+<section>
+  <h2>Selected Honors</h2>
+  <ul class="honor-list">
+    <li>
+      <span>First-Class Comprehensive Scholarship of Tsinghua University</span>
+      <span class="honor-year">2025</span>
+    </li>
+    <li>
+      <span>Xuetang Scholarship &mdash; Tsinghua Xuetang Talents Program</span>
+      <span class="honor-year">2024, 2025</span>
+    </li>
+    <li>
+      <span>Friend of Tsinghua &mdash; Jeme Tien-yow Scholarship</span>
+      <span class="honor-year">2025</span>
+    </li>
+  </ul>
+</section>
+
 <!-- Publication -->
 <section>
   <h2>Publication</h2>
   <p class="pub-text">One day. Maybe not today, maybe not tomorrow, but one day.</p>
 </section>
 
-<!-- Personal Interest -->
+<!-- Personal Interests -->
 <section>
-  <h2>Personal Interest</h2>
+  <h2>Personal Interests</h2>
   <div class="tag-list">
     <span class="tag">American Football</span>
     <span class="tag">Reading</span>
