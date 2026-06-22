@@ -6,73 +6,116 @@
 <title>Hongyu Tao</title>
 
 <style>
+:root {
+  --text: #111111;
+  --muted: #565656;
+  --quiet: #8a8a8a;
+  --line: #e8e8e8;
+  --soft: #f6f6f6;
+  --page-width: 820px;
+  --page-pad-y-min: 48px;
+  --page-pad-y-max: 84px;
+  --page-pad-x-min: 22px;
+  --page-pad-x-max: 56px;
+  --body-size: 18px;
+  --body-line-height: 1.62;
+  --header-gap-min: 24px;
+  --header-gap-max: 44px;
+  --header-margin-bottom: 60px;
+  --header-padding-bottom: 40px;
+  --avatar-size: 108px;
+  --title-min: 2.5rem;
+  --title-max: 4.25rem;
+  --subtitle-size: 1.08rem;
+  --subtitle-measure: 48ch;
+  --section-gap: 52px;
+  --section-title-size: 0.78rem;
+  --section-title-tracking: 0.14em;
+  --item-title-size: 1.14rem;
+  --date-gap: 18px;
+  --content-measure: 66ch;
+}
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { -webkit-text-size-adjust: 100%; }
 body {
   font-family: 'Times New Roman', Times, serif;
   background: #ffffff;
-  color: #111111;
-  padding: 60px 24px;
-  max-width: 720px;
+  color: var(--text);
+  padding: clamp(var(--page-pad-y-min), 7vw, var(--page-pad-y-max)) clamp(var(--page-pad-x-min), 5vw, var(--page-pad-x-max));
+  max-width: var(--page-width);
   margin: 0 auto;
-  line-height: 1.6;
-  font-size: 18px;
+  line-height: var(--body-line-height);
+  font-size: var(--body-size);
+  overflow-wrap: break-word;
+  text-wrap: pretty;
 }
 .header {
   display: flex;
-  align-items: center;
-  gap: 32px;
-  margin-bottom: 52px;
-  padding-bottom: 36px;
-  border-bottom: 1px solid #e5e5e5;
+  align-items: flex-end;
+  gap: clamp(var(--header-gap-min), 5vw, var(--header-gap-max));
+  margin-bottom: var(--header-margin-bottom);
+  padding-bottom: var(--header-padding-bottom);
+  border-bottom: 1px solid var(--line);
 }
 .avatar {
-  width: 96px;
-  height: 96px;
+  width: var(--avatar-size);
+  height: var(--avatar-size);
   border-radius: 50%;
   object-fit: cover;
   object-position: center top;
   flex-shrink: 0;
 }
 .header-text h1 {
-  font-size: 2rem;
-  font-weight: 600;
-  margin-bottom: 8px;
+  font-size: clamp(var(--title-min), 7vw, var(--title-max));
+  line-height: 1;
+  font-weight: 700;
+  margin-bottom: 14px;
+  text-wrap: balance;
 }
 .header-text p {
-  font-size: 1rem;
-  color: #555555;
+  max-width: var(--subtitle-measure);
+  font-size: var(--subtitle-size);
+  line-height: 1.45;
+  color: var(--muted);
 }
 section {
-  margin-bottom: 44px;
+  margin-bottom: var(--section-gap);
 }
 h2 {
-  font-size: 0.85rem;
-  font-weight: 600;
+  font-size: var(--section-title-size);
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: #888888;
-  margin-bottom: 16px;
+  letter-spacing: var(--section-title-tracking);
+  color: var(--quiet);
+  margin-bottom: 18px;
 }
 /* Education */
 .edu-item {
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 .edu-item .school {
-  font-size: 1.05rem;
-  font-weight: 600;
+  font-size: 1.22rem;
+  line-height: 1.25;
+  font-weight: 700;
+  margin-bottom: 5px;
 }
 .edu-item .degree {
-  font-size: 0.95rem;
-  color: #444444;
+  max-width: calc(var(--content-measure) - 6ch);
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #333333;
 }
 .edu-item .note {
-  font-size: 0.88rem;
-  color: #888888;
-  margin-top: 4px;
+  max-width: calc(var(--content-measure) - 2ch);
+  font-size: 0.92rem;
+  line-height: 1.5;
+  color: var(--quiet);
+  margin-top: 8px;
 }
 .edu-item .year {
-  font-size: 0.88rem;
-  color: #888888;
+  font-size: 0.92rem;
+  color: var(--quiet);
+  margin-top: 2px;
 }
 /* Honors */
 .honor-list {
@@ -80,56 +123,61 @@ h2 {
   padding: 0;
 }
 .honor-list li {
-  font-size: 0.95rem;
-  padding: 6px 0;
-  border-bottom: 1px solid #f0f0f0;
-  display: flex;
-  justify-content: space-between;
+  font-size: 1rem;
+  line-height: 1.45;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--soft);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
   align-items: baseline;
-  gap: 12px;
+  gap: var(--date-gap);
 }
 .honor-list li:last-child { border-bottom: none; }
 .honor-year {
-  font-size: 0.85rem;
-  color: #888888;
+  font-size: 0.9rem;
+  color: var(--quiet);
   white-space: nowrap;
-  flex-shrink: 0;
 }
 /* Program */
 .prog-item {
-  padding: 14px 0;
-  border-bottom: 1px solid #f0f0f0;
+  padding: 18px 0;
+  border-bottom: 1px solid var(--soft);
 }
 .prog-item:last-child { border-bottom: none; }
 .prog-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  gap: 12px;
-  margin-bottom: 4px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: start;
+  gap: var(--date-gap);
+  margin-bottom: 8px;
 }
 .prog-title {
-  font-size: 1.05rem;
-  font-weight: 600;
+  max-width: calc(var(--content-measure) - 4ch);
+  font-size: var(--item-title-size);
+  line-height: 1.34;
+  font-weight: 700;
+  text-wrap: pretty;
 }
 .prog-date {
-  font-size: 0.85rem;
-  color: #888888;
+  padding-top: 0.15rem;
+  font-size: 0.9rem;
+  color: var(--quiet);
   white-space: nowrap;
-  flex-shrink: 0;
 }
 .prog-detail {
-  font-size: 0.95rem;
-  color: #555555;
-  margin-top: 2px;
+  max-width: var(--content-measure);
+  font-size: 0.98rem;
+  line-height: 1.55;
+  color: var(--muted);
+  margin-top: 4px;
 }
 .prog-detail + .prog-detail {
-  margin-top: 3px;
+  margin-top: 5px;
 }
 /* Publication */
 .pub-text {
   font-size: 1rem;
-  color: #555555;
+  color: var(--muted);
   font-style: italic;
 }
 /* Personal Interest */
@@ -139,46 +187,78 @@ h2 {
   gap: 10px;
 }
 .tag {
-  background: #f5f5f5;
+  background: var(--soft);
   color: #333333;
-  padding: 6px 14px;
+  padding: 7px 14px;
   border-radius: 4px;
   font-size: 0.95rem;
+  line-height: 1.2;
 }
 a.contact-link {
   font-size: 1rem;
-  color: #111111;
+  color: var(--text);
   text-decoration: none;
-  border-bottom: 1px solid #111111;
+  border-bottom: 1px solid var(--text);
 }
-a.contact-link:hover { color: #555555; border-color: #555555; }
-@media (max-width: 520px) {
-  .header { flex-direction: column; align-items: flex-start; }
-  .avatar { width: 80px; height: 80px; }
-  .prog-header { flex-direction: column; gap: 2px; }
-  .honor-list li { flex-direction: column; gap: 2px; }
-}
+a.contact-link:hover { color: var(--muted); border-color: var(--muted); }
 
 .edu-school-row {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  gap: 16px;
+  gap: 28px;
 }
 .teep-logo {
-  width: 80px;
-  height: 80px;
+  width: 76px;
+  height: 76px;
   object-fit: contain;
   flex-shrink: 0;
   margin-top: 2px;
 }
 .teep-desc {
-  margin-top: 12px;
-  font-size: 0.92rem;
-  color: #555555;
-  line-height: 1.65;
-  border-left: 3px solid #e5e5e5;
-  padding-left: 14px;
+  max-width: var(--content-measure);
+  margin-top: 18px;
+  font-size: 0.96rem;
+  color: var(--muted);
+  line-height: 1.68;
+  border-left: 2px solid var(--line);
+  padding-left: 16px;
+}
+@media (max-width: 640px) {
+  body {
+    font-size: 17px;
+    padding-top: 40px;
+  }
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 22px;
+    margin-bottom: 48px;
+    padding-bottom: 32px;
+  }
+  .avatar { width: 88px; height: 88px; }
+  .prog-header,
+  .honor-list li {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+  .edu-school-row {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 18px;
+  }
+  .teep-logo {
+    width: 58px;
+    height: 58px;
+  }
+}
+@media (max-width: 420px) {
+  .edu-school-row {
+    grid-template-columns: 1fr;
+  }
+  .teep-logo {
+    order: -1;
+  }
 }
 </style>
 </head>
@@ -201,12 +281,13 @@ a.contact-link:hover { color: #555555; border-color: #555555; }
         <div class="school">Tsinghua University</div>
         <div class="degree">B.S. in Theoretical and Applied Mechanics &mdash; Tsien Excellence in Engineering Program (TEEP)</div>
         <div class="year">2024 &ndash; present</div>
-        <div class="note"><em>This is NOT mechanical engineering &mdash; This Major focuses on the intersection of Math and Physics.</em></div>
+        <div class="note"><em>This is not mechanical engineering &mdash; this major focuses on the intersection of math and physics.</em></div>
       </div>
       <img class="teep-logo" src="teep-logo.png" alt="TEEP Logo">
     </div>
     <div class="teep-desc">
-      The Tsien Excellence in Engineering Program (TEEP, 钱学森力学班) is an elite honors program at Tsinghua University, named after Qian Xuesen — a pioneer of aerospace and applied mechanics. The program selects top students and provides rigorous training in mathematics, physics, and engineering science, with emphasis on fundamental research and interdisciplinary thinking.
+      The Tsien Excellence in Engineering Program (TEEP, Qian Xuesen Mechanics Program) is a highly selective honors program at Tsinghua University.
+      Students receive intensive academic training to cultivate mathematical and physical intuition, and are encouraged to apply it to rigorous, multidisciplinary research.
     </div>
   </div>
 </section>
