@@ -91,8 +91,8 @@ margin-bottom: 18px;
 }
 .edu-item { margin-bottom: 12px; }
 .edu-item .school { font-size: 1.22rem; line-height: 1.25; font-weight: 700; margin-bottom: 5px; }
-.edu-item .degree { max-width: calc(var(--content-measure) - 6ch); font-size: 1rem; line-height: 1.5; color: #333333; }
-.edu-item .note { max-width: calc(var(--content-measure) - 2ch); font-size: 0.92rem; line-height: 1.5; color: var(--quiet); margin-top: 8px; }
+.edu-item .degree { font-size: 1rem; line-height: 1.5; color: #333333; }
+.edu-item .note { font-size: 0.92rem; line-height: 1.5; color: var(--quiet); margin-top: 8px; }
 .edu-item .year { font-size: 0.92rem; color: var(--quiet); margin-top: 2px; }
 .honor-list { list-style: none; padding: 0; }
 .honor-list li { font-size: 1rem; line-height: 1.45; padding: 10px 0; border-bottom: 1px solid var(--soft); display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: baseline; gap: var(--date-gap); }
@@ -104,27 +104,25 @@ margin-bottom: 18px;
 a.contact-link { font-size: 1rem; color: var(--text); text-decoration: none; border-bottom: 1px solid var(--text); }
 a.contact-link:hover { color: var(--muted); border-color: var(--muted); }
 
-/* Education layout: text left, logo right */
+/* Education layout: logo LEFT, text RIGHT */
 .edu-school-row {
 display: flex;
 align-items: flex-start;
-justify-content: space-between;
 gap: 28px;
-}
-.edu-text-col {
-flex: 1;
-min-width: 0;
 }
 .teep-logo {
 width: 99px;
 height: 99px;
 object-fit: contain;
 flex-shrink: 0;
-margin-top: 2px;
+margin-top: 4px;
+}
+.edu-text-col {
+flex: 1;
+min-width: 0;
 }
 .teep-desc {
-max-width: var(--content-measure);
-margin-top: 18px;
+margin-top: 14px;
 font-size: 0.96rem;
 color: var(--muted);
 line-height: 1.68;
@@ -172,6 +170,7 @@ body { font-size: 17px; padding-top: 40px; }
 <h2>Education</h2>
 <div class="edu-item">
 <div class="edu-school-row">
+<img class="teep-logo" src="teep-logo.png" alt="TEEP Logo">
 <div class="edu-text-col">
 <div class="school">Tsinghua University</div>
 <div class="degree">B.S. in Theoretical and Applied Mechanics &mdash; Tsien Excellence in Engineering Program (TEEP)</div>
@@ -183,7 +182,6 @@ Here, students receive intensive academic training to cultivate their mathematic
 They are encouraged to apply this intuition to conduct rigorous, multidisciplinary research.
 </div>
 </div>
-<img class="teep-logo" src="teep-logo.png" alt="TEEP Logo">
 </div>
 </div>
 </section>
