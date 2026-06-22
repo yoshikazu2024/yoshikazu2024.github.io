@@ -260,6 +260,52 @@ a.contact-link:hover { color: var(--muted); border-color: var(--muted); }
     order: -1;
   }
 }
+
+.exp-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 18px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+.exp-card:last-child { border-bottom: none; }
+.exp-logo {
+  width: 90px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 3px;
+}
+.exp-logo img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+.exp-body { flex: 1; }
+.exp-title {
+  font-size: 1.05rem;
+  font-weight: bold;
+  margin-bottom: 2px;
+}
+.exp-meta {
+  font-size: 0.88rem;
+  color: #666666;
+  margin-bottom: 6px;
+}
+.exp-keywords {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.exp-kw {
+  background: #f5f5f5;
+  color: #333333;
+  padding: 3px 10px;
+  border-radius: 3px;
+  font-size: 0.82rem;
+}
+
 </style>
 </head>
 <body>
@@ -281,44 +327,65 @@ a.contact-link:hover { color: var(--muted); border-color: var(--muted); }
         <div class="school">Tsinghua University</div>
         <div class="degree">B.S. in Theoretical and Applied Mechanics &mdash; Tsien Excellence in Engineering Program (TEEP)</div>
         <div class="year">2024 &ndash; present</div>
-        <div class="note"><em>This is not mechanical engineering &mdash; this major focuses on the intersection of math and physics.</em></div>
+        <div class="note"><em>This is NOT mechanical engineering &mdash; This Major focuses on the intersection of Math and Physics.</em></div>
       </div>
       <img class="teep-logo" src="teep-logo.png" alt="TEEP Logo">
     </div>
     <div class="teep-desc">
-      The Tsien Excellence in Engineering Program (TEEP, Qian Xuesen Mechanics Program) is a highly selective honors program at Tsinghua University.<br>
-      Students receive intensive academic training to cultivate mathematical and physical intuition, and are encouraged to apply it to rigorous, multidisciplinary research.
+      The Tsien Excellence in Engineering Program (TEEP, 钱学森力学班) is an elite honors program at Tsinghua University, named after Qian Xuesen &mdash; a pioneer of aerospace and applied mechanics. Here, students receive intensive academic training to cultivate their mathematical and physical intuition. They are encouraged to apply this intuition to conduct rigorous, multidisciplinary research.
     </div>
   </div>
 </section>
 
-<!-- Programs -->
+<!-- Academic Experience -->
 <section>
-  <h2>Program</h2>
+  <h2>Academic Experience</h2>
 
-  <div class="prog-item">
-    <div class="prog-header">
-      <span class="prog-title">Research Assistant &mdash; McGovern Institute for Brain Research, Tsinghua University</span>
-      <span class="prog-date">Dec 2024 &ndash; present</span>
+  <div class="exp-card">
+    <div class="exp-logo">
+      <img src="logo-mcgovern.png" alt="McGovern Institute">
     </div>
-    <div class="prog-detail">Dec 2024 &ndash; Jun 2026 &nbsp;&bull;&nbsp; Advisor: Zengcai Guo &mdash; Acquired foundational knowledge in systems neuroscience.</div>
-    <div class="prog-detail">Jun 2026 &ndash; present &nbsp;&bull;&nbsp; Advisor: Xinyu Zhao &mdash; Exploring in silico network models for understanding working memory.</div>
+    <div class="exp-body">
+      <div class="exp-title">Research Assistant &mdash; McGovern Institute for Brain Research, Tsinghua University</div>
+      <div class="exp-meta">Dec 2024 &ndash; present &nbsp;&bull;&nbsp; Advisors: Zengcai Guo (2024&ndash;2026), Xinyu Zhao (2026&ndash;present)</div>
+      <div class="exp-keywords">
+        <span class="exp-kw">Systems neuroscience</span>
+        <span class="exp-kw">Working memory</span>
+        <span class="exp-kw">In silico network modeling</span>
+        <span class="exp-kw">RNN</span>
+      </div>
+    </div>
   </div>
 
-  <div class="prog-item">
-    <div class="prog-header">
-      <span class="prog-title">Research Assistant &mdash; Tai-Sing Lee Lab, Carnegie Mellon University</span>
-      <span class="prog-date">Feb 2026 &ndash; present</span>
+  <div class="exp-card">
+    <div class="exp-logo">
+      <img src="logo-cmu.png" alt="Carnegie Mellon University">
     </div>
-    <div class="prog-detail">Investigating the role of mixed selectivity in manifold separation of neural representations.</div>
+    <div class="exp-body">
+      <div class="exp-title">Research Assistant &mdash; Active Perception Laboratory, Carnegie Mellon University</div>
+      <div class="exp-meta">Feb 2026 &ndash; present &nbsp;&bull;&nbsp; Advisor: Tai-Sing Lee</div>
+      <div class="exp-keywords">
+        <span class="exp-kw">Mixed selectivity</span>
+        <span class="exp-kw">Neural manifolds</span>
+        <span class="exp-kw">Representational geometry</span>
+      </div>
+    </div>
   </div>
 
-  <div class="prog-item">
-    <div class="prog-header">
-      <span class="prog-title">Research Intern &mdash; Guoqi Li Lab, Institute of Automation, Chinese Academy of Sciences</span>
-      <span class="prog-date">Feb 2026 &ndash; present</span>
+  <div class="exp-card">
+    <div class="exp-logo">
+      <img src="logo-cas.png" alt="Chinese Academy of Sciences">
     </div>
-    <div class="prog-detail">Studying whole-brain connectome-based control of Drosophila locomotion using the full-scale fly brain network.</div>
+    <div class="exp-body">
+      <div class="exp-title">Research Intern &mdash; Guoqi Li Lab, Institute of Automation, Chinese Academy of Sciences</div>
+      <div class="exp-meta">Feb 2026 &ndash; present</div>
+      <div class="exp-keywords">
+        <span class="exp-kw">Drosophila connectome</span>
+        <span class="exp-kw">Whole-brain network</span>
+        <span class="exp-kw">Neural control</span>
+        <span class="exp-kw">Brain-inspired computing</span>
+      </div>
+    </div>
   </div>
 </section>
 
